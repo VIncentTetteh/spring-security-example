@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: jwt-oauth2-jpa
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:chris
+    username: admin
+    password: 8462368
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+logging:
+  level:
+    org.springframework.security: trace
+
+server:
+  port: 8081
+
+jwt:
+  rsa-private-key: classpath:certs/privateKey.pem
+  rsa-public-key: classpath:certs/publicKey.pem
